@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+      - name: first_assignment
+        description: "first_assignment"
+      - name: second
+        description: "second"
+      - name: playing_with_tests
+        description: "Trying schema based tests"
+        columns:
+            - name: c_custkey
+              description: "The primary key for this table"
+              tests:
+                  - unique
+                  - not_null
+            - name: c_mktsegment
+              description: "Market segment"
+              tests:
+                  - accepted_values:
+                      values: ['BUILDING', 'AUTOMOBILE', 'MACHINERY', 'HOUSEHOLD','FURNITURE']
